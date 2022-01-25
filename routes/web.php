@@ -15,8 +15,16 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('index');
-});
+})->name('root');
 
 Route::get('/twee', function () {
     return view('twee');
-});
+})->name('twee');
+
+Route::get('/twee_form', function () {
+    return view('twee_form');
+})->name('twee_form');
+
+Route::post('/twee', function(){
+    dd(request()->all());
+})->name('twee_post');
